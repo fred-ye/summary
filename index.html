@@ -1,2 +1,42 @@
-http://repo1.maven.org/maven2/javax/xml/bind/jaxb-api/2.2.9/   jaxb
-http://www.java2s.com/Code/Jar/m/Downloadminaintegrationjmx117jar.htm  
+http://csimms.botonomy.com/2011/05/html5-storage-wars-localstorage-vs-indexeddb-vs-web-sql.html
+
+HTML5 LocalStorage:
+(1)Web Storage是目前得到支持最广泛的HTML5本地存储规范：IE 8+、FF 3.5+、Safari 4+、Chrome 4+、Opera 10.5+，以及iPhone 2+和Android 2+都已经支持Web Storage，要判断你的浏览器是否支持Web Storage，可以使用下面这个函数：
+function supports_html5_storage(){
+	try {
+		return 'localStorage' in window && window['localStorage'] !== null;
+	} catch(e) {
+		return false;
+	}
+}
+console.log(supports_html5_storage());
+localStorage.setItem('aaa','111111');
+console.log(localStorage.getItem('aaa'));
+localStorage.removeItem('aaa'); //删除一个item
+
+window.addEventListener('storage', function(e){
+	console.log(e.key + 'aaa value is changed from ' + e.oldValue + " to" + e.newValue + " by " + e.url);
+}, false);
+
+localStorage['aaa'] = 'aaaaaa';
+localStorage['aaa'] ='111111';
+会看到：
+aaaaaa value is changed from 111111 toaa by http://www.mhtml5.com/2012/12/5413.html 
+
+HTML5 Storage的缺点，它默认的QUOTA只有5MB，并且你没办法通过程序自行或是提示用户来增加存储空间。唯一的办法就是用户自己打开 浏览器的设置，并手动修改QUOTA的大小，如果超出了5MB的限制，你将会遇到一个"QUOTA_EXCEEDED_ERR"的错误。
+
+Web SQL : http://dev.w3.org/html5/webdatabase/
+This document was on the W3C Recommendation track but specification work has stopped. The specification reached an impasse: all interested implementors have used the same SQL backend (Sqlite), but we need multiple independent implementations to proceed along a standardisation path.
+
+ 大概意思就是
+
+这个文档曾经在W3C推荐规范上，但规范工作已经停止了。目前已经陷入了一个僵局：目前的所有实现都是基于同一个SQL后端（SQLite），但是我们需要更多的独立实现来完成标准化。
+
+
+IndexDB: 
+
+
+
+
+HTML5 Device API(一)  http://cube.qq.com/?p=426
+ 
