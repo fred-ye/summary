@@ -45,6 +45,45 @@ IndexDB:
 
 
 HTML5 Device API(一)  http://cube.qq.com/?p=426
+
+
+HTML5 表单：
+输入类型：HTML5 拥有多个新的表单输入类型。这些新特性提供了更好的输入控制和验证。
+	email
+	url
+	number
+	range
+	Date pickers (date, month, week, time, datetime, datetime-local)
+	search
+	color
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<form action="/example/html5/demo_form.asp" method="get">
+Points: <input type="range" name="points" min="1" max="10" />
+<input type="submit" />
+</form>
+
+</body>
+</html>
+
+Date: <input type="date" name="user_date" />
+Month: <input type="month" name="user_date" />
+
+元素：datalist
+
+
+HTML5 表单属性：
+autocomplete
+autofocus
+placeholder
+required
+
+Web Worker： 
+当在 HTML 页面中执行脚本时，页面的状态是不可响应的，直到脚本已完成。
+web worker 是运行在后台的 JavaScript，独立于其他脚本，不会影响页面的性能。您可以继续做任何愿意做的事情：点击、选取内容等等，而此时 web worker 在后台运行。
+
 </pre>
 </body>
 </html>
